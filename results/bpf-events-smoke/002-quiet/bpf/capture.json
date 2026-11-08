@@ -1,0 +1,342 @@
+{
+  "clock": "receiver CLOCK_MONOTONIC",
+  "config": {
+    "bin_ms": 100,
+    "capabilities": {
+      "attachment_tested": false,
+      "binary": "/usr/bin/bpftrace",
+      "btf": true,
+      "groups": {
+        "idle": {
+          "available": true,
+          "missing": []
+        },
+        "irq": {
+          "available": true,
+          "missing": []
+        },
+        "rcu": {
+          "available": false,
+          "missing": [
+            "rcu/rcu_callback: [Errno 2] No such file or directory: '/sys/kernel/tracing/events/rcu/rcu_callback/format'",
+            "rcu/rcu_invoke_callback: [Errno 2] No such file or directory: '/sys/kernel/tracing/events/rcu/rcu_invoke_callback/format'"
+          ]
+        },
+        "sched": {
+          "available": true,
+          "missing": []
+        },
+        "softirq": {
+          "available": true,
+          "missing": []
+        },
+        "tlb": {
+          "available": true,
+          "missing": []
+        }
+      },
+      "tracefs": "/sys/kernel/tracing",
+      "version": "bpftrace v0.20.2",
+      "version_ok": true
+    },
+    "cpus": [
+      1
+    ],
+    "groups": [
+      "sched",
+      "tlb",
+      "irq",
+      "softirq",
+      "idle"
+    ],
+    "hz": 99,
+    "max_bins": 512,
+    "reasons": [],
+    "skipped": {},
+    "stacks": false,
+    "supported": true
+  },
+  "diagnostic": true,
+  "forced_stop": false,
+  "markers": {
+    "END": 12587642160653141,
+    "READY": 12587641376342608
+  },
+  "overflow": 0,
+  "returncode": 0,
+  "schema": 1,
+  "scope": "systemwide probe hooks and profile interrupts; retained data filtered by CPU",
+  "series": {
+    "idle_count": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 460
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 723
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 725
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 532
+      },
+      {
+        "bin": 4,
+        "cpu": 1,
+        "value": 137
+      },
+      {
+        "bin": 5,
+        "cpu": 1,
+        "value": 185
+      },
+      {
+        "bin": 6,
+        "cpu": 1,
+        "value": 133
+      },
+      {
+        "bin": 7,
+        "cpu": 1,
+        "value": 64
+      }
+    ],
+    "idle_ns": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 84266740
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 94647364
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 94649372
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 93996129
+      },
+      {
+        "bin": 4,
+        "cpu": 1,
+        "value": 95993520
+      },
+      {
+        "bin": 5,
+        "cpu": 1,
+        "value": 93540406
+      },
+      {
+        "bin": 6,
+        "cpu": 1,
+        "value": 96601313
+      },
+      {
+        "bin": 7,
+        "cpu": 1,
+        "value": 30932515
+      }
+    ],
+    "irq_count": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 6
+      }
+    ],
+    "irq_ns": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 43290
+      }
+    ],
+    "runq_count": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 404
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 683
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 687
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 451
+      }
+    ],
+    "runq_max": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 2114755
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 40191
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 201061858
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 15840
+      }
+    ],
+    "runq_ns": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 4306875
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 1032763
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 202001027
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 566156
+      }
+    ],
+    "softirq_count": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 23
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 11
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 17
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 32
+      },
+      {
+        "bin": 4,
+        "cpu": 1,
+        "value": 40
+      },
+      {
+        "bin": 5,
+        "cpu": 1,
+        "value": 62
+      },
+      {
+        "bin": 6,
+        "cpu": 1,
+        "value": 19
+      }
+    ],
+    "softirq_ns": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 71809
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 26645
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 34328
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 110069
+      },
+      {
+        "bin": 4,
+        "cpu": 1,
+        "value": 156384
+      },
+      {
+        "bin": 5,
+        "cpu": 1,
+        "value": 441587
+      },
+      {
+        "bin": 6,
+        "cpu": 1,
+        "value": 82453
+      }
+    ],
+    "tlb_count": [
+      {
+        "bin": 0,
+        "cpu": 1,
+        "value": 127
+      },
+      {
+        "bin": 1,
+        "cpu": 1,
+        "value": 66
+      },
+      {
+        "bin": 2,
+        "cpu": 1,
+        "value": 60
+      },
+      {
+        "bin": 3,
+        "cpu": 1,
+        "value": 62
+      },
+      {
+        "bin": 4,
+        "cpu": 1,
+        "value": 70
+      }
+    ]
+  },
+  "stacks": {
+    "kernel_stacks": {},
+    "user_stacks": {}
+  },
+  "status": "complete",
+  "warnings": []
+}

@@ -1,0 +1,16 @@
+{
+  "sources": {
+    "metalbench/__init__.py": "c2306ad2dcbea8321aae1f50af56db69d1305b7eeceed6e8d57ddfb26f3b4fc3",
+    "metalbench/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "metalbench/bpf.py": "15bf2fb8f02edeea21fc78dc10741ce7f02dbec513c8978bf75486e90f1d7eea",
+    "metalbench/cli.py": "df77c1d6eec4ea082fe8bd516fb9b5296d5505701166ae58521144c5e7bf59bf",
+    "metalbench/discovery.py": "37a438f3260f3ee98b494a5a2a724b174069b42322a4e49a7968c1ebd908429c",
+    "metalbench/graphs.py": "4e9eee64fd5e1656daa91eb3492b8fba35067f59e94b395b2966816be11eca40",
+    "metalbench/netlink.py": "3f2dd77e741bb016c11bdffc450ec385af0e48c7046ad7c1c8061077a1a07bf7",
+    "metalbench/runner.py": "3c37e11721fbfa5786813217d39f25c03777e707148afbf31c738753b36d87a7",
+    "metalbench/state.py": "3e30fafc088635a1a823e88b9cb89daf49fae1a94d51e771f3aed0729e8f5d9a",
+    "metalbench/stats.py": "7746757bace10eb1c937fda57175c899e58b2eb04f2200d01627f3d58bc321dc",
+    "native/latprobe.c": "edf0be3e6930f90bfd26edfb72e0d1a8431733225dbb1e44fd97b1c2aa806871"
+  },
+  "worker_sha256": "031b7ba270acf4d162fef813121d987ed488bfa9cce66cb2eb515bbce3a1e871"
+}

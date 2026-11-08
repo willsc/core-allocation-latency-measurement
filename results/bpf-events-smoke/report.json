@@ -1,0 +1,625 @@
+{
+  "boot_id": "6fce9436-3ed7-44ac-b74a-169d5156fc17",
+  "case": "tlb",
+  "comparison": {
+    "interpretation": "fewer than five independent rounds; descriptive comparison only",
+    "median_change_percent": 30.73207132197,
+    "negative_means": "lower latency",
+    "paired_rounds": 1,
+    "round_changes_percent": [
+      30.73207132197
+    ]
+  },
+  "diagnostic": true,
+  "hostname": "cwills-NucBox-EVO-T1",
+  "kernel": "6.17.0-35-generic",
+  "parameters": {
+    "address": "127.0.0.1",
+    "apply": false,
+    "bpf": true,
+    "bpf_bin_ms": 100,
+    "bpf_cpus": null,
+    "bpf_events": "sched,tlb,irq,softirq,idle",
+    "bpf_hz": 99,
+    "bpf_max_bins": 512,
+    "bpf_stacks": false,
+    "burst": 1000,
+    "busy_budget": 64,
+    "busy_us": 20,
+    "case": "tlb",
+    "churn_interval_us": 100,
+    "command": "run",
+    "cpu": 1,
+    "defer_irqs": 2,
+    "elc_low_percent": 100,
+    "floor_khz": null,
+    "gap_us": 100,
+    "graphs": true,
+    "gro_ns": 20000,
+    "idle_latency_us": 1,
+    "interface": null,
+    "interval_us": 100,
+    "io_mask": null,
+    "load_seconds": 10,
+    "loads": 64,
+    "local_peer": false,
+    "memory_mb": 1,
+    "mlock": false,
+    "modes": "irq,software,epoll",
+    "monitor_cpu": 0,
+    "napi_id": null,
+    "network_warmup_samples": 1000,
+    "noise_cpu": 2,
+    "output": "results/bpf-events-smoke",
+    "packet_size": 64,
+    "peer": null,
+    "peer_binary": "/opt/core-allocation-pipeline/build/latprobe",
+    "peer_cpu": 0,
+    "port": 41000,
+    "quiet_us": 10000,
+    "rcu_state": "wake",
+    "reply_timeout_ms": 1000,
+    "rounds": 1,
+    "samples": 2000,
+    "source_port": 41001,
+    "suspend_ns": 100000,
+    "telemetry_ms": 0,
+    "trial_timeout": 600,
+    "uncore_dir": null,
+    "warmup_ms": 20
+  },
+  "primary_metric": "batch_ns",
+  "schema": 1,
+  "status": "complete",
+  "trials": [
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "000-shared-mm",
+      "index": 0,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.016227,
+        "elapsed_ns": 324509060,
+        "gap_us": 100,
+        "involuntary_switches": 0,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "thread",
+        "noise_cpu": 2,
+        "noise_missed_periods": 1634,
+        "noise_operations": 3222,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587638837280888,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 20017,
+            "mean": 3551.7825,
+            "min": 1170,
+            "p50": 1824,
+            "p99": 11604,
+            "p99.9": 13407,
+            "p99.99": 20017
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 2040832,
+            "mean": 58647.9115,
+            "min": 5219,
+            "p50": 54942,
+            "p99": 68888,
+            "p99.9": 1819927,
+            "p99.99": 2040832
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 2045881,
+            "mean": 62199.694,
+            "min": 6998,
+            "p50": 56738,
+            "p99": 75997,
+            "p99.9": 1827061,
+            "p99.99": 2045881
+          }
+        },
+        "noise_ops_per_second": 9928.84451361697,
+        "warnings": [
+          "mapping churn missed scheduled periods; compare achieved interference rates",
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "shared-mm",
+      "warnings": []
+    },
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "001-separate-mm",
+      "index": 1,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.014846,
+        "elapsed_ns": 318661114,
+        "gap_us": 100,
+        "involuntary_switches": 0,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "process",
+        "noise_cpu": 2,
+        "noise_missed_periods": 1414,
+        "noise_operations": 3544,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587640126283297,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 24892,
+            "mean": 3540.9155,
+            "min": 801,
+            "p50": 1888,
+            "p99": 11181,
+            "p99.9": 15940,
+            "p99.99": 24892
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 1522876,
+            "mean": 55745.736,
+            "min": 3367,
+            "p50": 54349,
+            "p99": 66867,
+            "p99.9": 519644,
+            "p99.99": 1522876
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 1525902,
+            "mean": 59286.6515,
+            "min": 7014,
+            "p50": 56404,
+            "p99": 76196,
+            "p99.9": 530913,
+            "p99.99": 1525902
+          }
+        },
+        "noise_ops_per_second": 11121.532701351192,
+        "warnings": [
+          "mapping churn missed scheduled periods; compare achieved interference rates",
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "separate-mm",
+      "warnings": []
+    },
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "002-quiet",
+      "index": 2,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.011453,
+        "elapsed_ns": 310875282,
+        "gap_us": 100,
+        "involuntary_switches": 0,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "none",
+        "noise_cpu": 2,
+        "noise_missed_periods": 0,
+        "noise_operations": 0,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587641430599171,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 15116,
+            "mean": 2050.266,
+            "min": 789,
+            "p50": 891,
+            "p99": 11088,
+            "p99.9": 12870,
+            "p99.99": 15116
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 92237,
+            "mean": 53344.9395,
+            "min": 5487,
+            "p50": 54227,
+            "p99": 59716,
+            "p99.9": 80845,
+            "p99.99": 92237
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 93232,
+            "mean": 55395.2055,
+            "min": 6323,
+            "p50": 55207,
+            "p99": 69392,
+            "p99.9": 87042,
+            "p99.99": 93232
+          }
+        },
+        "noise_ops_per_second": 0.0,
+        "warnings": [
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "quiet",
+      "warnings": []
+    },
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "003-quiet",
+      "index": 3,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.014827,
+        "elapsed_ns": 318051228,
+        "gap_us": 100,
+        "involuntary_switches": 0,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "none",
+        "noise_cpu": 2,
+        "noise_missed_periods": 0,
+        "noise_operations": 0,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587642672578533,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 24674,
+            "mean": 3565.792,
+            "min": 799,
+            "p50": 1175,
+            "p99": 11150,
+            "p99.9": 14273,
+            "p99.99": 24674
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 1286492,
+            "mean": 55418.1105,
+            "min": 5653,
+            "p50": 54175,
+            "p99": 62136,
+            "p99.9": 832102,
+            "p99.99": 1286492
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 1293984,
+            "mean": 58983.9025,
+            "min": 7556,
+            "p50": 55743,
+            "p99": 70029,
+            "p99.9": 833767,
+            "p99.99": 1293984
+          }
+        },
+        "noise_ops_per_second": 0.0,
+        "warnings": [
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "quiet",
+      "warnings": []
+    },
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "004-separate-mm",
+      "index": 4,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.016036,
+        "elapsed_ns": 326382740,
+        "gap_us": 100,
+        "involuntary_switches": 1,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "process",
+        "noise_cpu": 2,
+        "noise_missed_periods": 817,
+        "noise_operations": 4894,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587643965554506,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 27485,
+            "mean": 3814.991,
+            "min": 804,
+            "p50": 1460,
+            "p99": 11250,
+            "p99.9": 17347,
+            "p99.99": 27485
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 2085165,
+            "mean": 59329.2265,
+            "min": 6066,
+            "p50": 54924,
+            "p99": 126684,
+            "p99.9": 1760913,
+            "p99.99": 2085165
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 2094048,
+            "mean": 63144.2175,
+            "min": 6943,
+            "p50": 56550,
+            "p99": 134680,
+            "p99.9": 1771574,
+            "p99.99": 2094048
+          }
+        },
+        "noise_ops_per_second": 14994.665465459357,
+        "warnings": [
+          "mapping churn missed scheduled periods; compare achieved interference rates",
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "separate-mm",
+      "warnings": []
+    },
+    {
+      "bpf": {
+        "capture": "bpf/capture.json",
+        "status": "complete"
+      },
+      "directory": "005-shared-mm",
+      "index": 5,
+      "observations": {
+        "churn_interval_us": 100,
+        "cpu": 1,
+        "cpu_seconds": 0.012764,
+        "elapsed_ns": 310695258,
+        "gap_us": 100,
+        "involuntary_switches": 0,
+        "kind": "memory",
+        "loads_per_batch": 64,
+        "major_faults": 0,
+        "memory_bytes": 1048576,
+        "minor_faults": 0,
+        "mlocked": false,
+        "noise": "thread",
+        "noise_cpu": 2,
+        "noise_missed_periods": 1555,
+        "noise_operations": 3102,
+        "page_policy": "MADV_NOHUGEPAGE",
+        "rusage_scope": "measuring_thread",
+        "samples": 2000,
+        "start_monotonic_ns": 12587645310312552,
+        "timed_major_faults": 0,
+        "timed_minor_faults": 0,
+        "voluntary_switches": 2000
+      },
+      "round": 0,
+      "status": "ok",
+      "summary": {
+        "loss_rate": null,
+        "metrics": {
+          "batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 17262,
+            "mean": 2195.6845,
+            "min": 1127,
+            "p50": 1460,
+            "p99": 10462,
+            "p99.9": 12055,
+            "p99.99": 17262
+          },
+          "wake_lateness_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 774992,
+            "mean": 53099.6175,
+            "min": 5015,
+            "p50": 54785,
+            "p99": 60680,
+            "p99.9": 195040,
+            "p99.99": 774992
+          },
+          "wakeup_plus_batch_ns": {
+            "count": 2000,
+            "insufficient_tail_samples": [
+              "p99.9",
+              "p99.99"
+            ],
+            "max": 777236,
+            "mean": 55295.302,
+            "min": 6506,
+            "p50": 56282,
+            "p99": 69277,
+            "p99.9": 197092,
+            "p99.99": 777236
+          }
+        },
+        "noise_ops_per_second": 9984.059685906117,
+        "warnings": [
+          "mapping churn missed scheduled periods; compare achieved interference rates",
+          "batch_ns: insufficient samples for p99.9, p99.99",
+          "wake_lateness_ns: insufficient samples for p99.9, p99.99",
+          "wakeup_plus_batch_ns: insufficient samples for p99.9, p99.99"
+        ]
+      },
+      "variant": "shared-mm",
+      "warnings": []
+    }
+  ],
+  "warnings": [
+    "victim CPU is not boot-isolated; scheduler noise may dominate",
+    "this host is not running the target 7.x kernel; local results are harness validation only",
+    "BPF diagnostic run: probe hooks and profile interrupts change timing; repeat without tracing for acceptance"
+  ]
+}

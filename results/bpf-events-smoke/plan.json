@@ -1,0 +1,90 @@
+{
+  "baseline": "shared-mm",
+  "bpf": {
+    "bin_ms": 100,
+    "capabilities": {
+      "attachment_tested": false,
+      "binary": "/usr/bin/bpftrace",
+      "btf": true,
+      "groups": {
+        "idle": {
+          "available": true,
+          "missing": []
+        },
+        "irq": {
+          "available": true,
+          "missing": []
+        },
+        "rcu": {
+          "available": false,
+          "missing": [
+            "rcu/rcu_callback: [Errno 2] No such file or directory: '/sys/kernel/tracing/events/rcu/rcu_callback/format'",
+            "rcu/rcu_invoke_callback: [Errno 2] No such file or directory: '/sys/kernel/tracing/events/rcu/rcu_invoke_callback/format'"
+          ]
+        },
+        "sched": {
+          "available": true,
+          "missing": []
+        },
+        "softirq": {
+          "available": true,
+          "missing": []
+        },
+        "tlb": {
+          "available": true,
+          "missing": []
+        }
+      },
+      "tracefs": "/sys/kernel/tracing",
+      "version": "bpftrace v0.20.2",
+      "version_ok": true
+    },
+    "cpus": [
+      1
+    ],
+    "groups": [
+      "sched",
+      "tlb",
+      "irq",
+      "softirq",
+      "idle"
+    ],
+    "hz": 99,
+    "max_bins": 512,
+    "reasons": [],
+    "skipped": {},
+    "stacks": false,
+    "supported": true
+  },
+  "candidate": "separate-mm",
+  "case": "tlb",
+  "monitor_cpu": 0,
+  "mutates_settings": false,
+  "ordering": "forward then reverse in each round",
+  "primary_metric": "batch_ns",
+  "reasons": [],
+  "rounds": 1,
+  "supported": true,
+  "variants": [
+    {
+      "changes": [],
+      "name": "shared-mm",
+      "noise": "thread"
+    },
+    {
+      "changes": [],
+      "name": "separate-mm",
+      "noise": "process"
+    },
+    {
+      "changes": [],
+      "name": "quiet",
+      "noise": "none"
+    }
+  ],
+  "warnings": [
+    "victim CPU is not boot-isolated; scheduler noise may dominate",
+    "this host is not running the target 7.x kernel; local results are harness validation only",
+    "BPF diagnostic run: probe hooks and profile interrupts change timing; repeat without tracing for acceptance"
+  ]
+}
