@@ -105,6 +105,8 @@ This creates `results/tlb-traced/graphs/` with:
 * `.folded` files: root-first collapsed stacks for use with other flame-graph tools.
 * `manifest.json`: plot descriptions and capture warnings.
 
+[Graph examples](graph-examples/README.md) shows one rendered example of each graph type.
+
 The directory is self-contained; there are no external JavaScript, font, analytics
 or CDN requests. SVG and PNG figures can be copied into reports. Graph output
 directories must be new; use `--output NEW_DIRECTORY` when rendering again.
